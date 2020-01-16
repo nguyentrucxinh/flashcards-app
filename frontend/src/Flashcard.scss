@@ -1,77 +1,99 @@
-@import url(https://fonts.googleapis.com/css?family=Oswald);
-
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+.container {
+  height: 120px;
+  width: 600px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-
-html,
-body {
-  background: #333;
-  border: 0px;
-  width: 100%;
-  height: 100%;
+.flip-container {
+  perspective: 1000;
+  margin: 10px;
+  float: left;
+  cursor: pointer;
+  /*  &:hover{
+    .flippable {
+      transform: rotateY(180deg);
+    }
+  }*/
 }
-
-html {
-  padding: 50px;
-  display: table;
+.flip-container .flippable {
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
 }
-
-body {
-  display: table-cell;
-  vertical-align: middle;
+.flip-container .flipme {
+  transform: rotateY(180deg);
 }
-
-div, article.flashcard {
-  margin: 0px auto;
-  border: 1px rgba(255, 255, 255, 0.03) solid;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  width: 100%;
-  max-width: 600px;
-  height: 100%;
-  max-height: 400px;
-
-  input[type="checkbox"] {
-    display: none;
-  }
-
-  input[type="checkbox"]:checked ~ label {
-    section.front {
-      height: 0%;
-    }
-
-    section.back {
-      height: 100%;
-    }
-  }
-
-  label {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  section {
-    display: block;
-    font: 30px "Oswald", sans-serif;
-    text-align: center;
-    line-height: 400px;
-    width: 100%;
-    transition: all 0.2s linear 0s;
-    overflow: hidden;
-
-    &.front {
-      color: #ba1f53;
-      background: #ddd;
-      height: 100%;
-    }
-
-    &.back {
-      color: #ddd;
-      background: #c85073;
-      height: 0%;
-    }
-  }
+.flip-container,
+.front,
+.back {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 40px;
+  border-radius: 5px;
+}
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.front {
+  z-index: 2;
+  color: white;
+}
+.front span {
+  font-size: 20px;
+  position: absolute;
+  top: -30px;
+  left: 10px;
+  font-family: verdana;
+}
+.back {
+  transform: rotateY(180deg);
+  font-size: 18px;
+  border: 1px solid;
+  font-family: Verdana;
+  color: white;
+}
+.ac-bicycle .front {
+  background: #1189d1;
+}
+.ac-bicycle .back {
+  background: #052c44;
+  border-color: #86cbf5;
+}
+.ac-car .front {
+  background: #18b755;
+}
+.ac-car .back {
+  background: #063016;
+  border-color: #7aeea7;
+}
+.ac-truck .front {
+  background: #f3b50b;
+}
+.ac-truck .back {
+  background: #614804;
+  border-color: #fbe19c;
+}
+.ac-umbrella .front {
+  background: #ef4809;
+}
+.ac-umbrella .back {
+  background: #5c1c03;
+  border-color: #fbb296;
+}
+.ac-plane .front {
+  background: #E82C0C;
+}
+.ac-plane .back {
+  background: #571004;
+  border-color: #f9a294;
 }
