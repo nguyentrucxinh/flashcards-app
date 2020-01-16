@@ -1,23 +1,56 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import './Flashcard.scss';
+import ReactMarkdown from 'react-markdown';
 
-function Flashcard() {
-  return (
-    <div className="container">
-      <div
-        className="flip-container"
-        ontouchstart="this.classList.toggle('hover');"
-      >
-        <div className="flippable appcon ac-bicycle">
-          <div className="front">
-            <span>B</span>
-            <i className="fa fa-bicycle" />
+class Flashcard extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      condition: false
+    };
+  }
+
+  handleClick = () => {
+    const { condition } = this.state;
+    this.setState({ condition: !condition });
+  };
+
+  render() {
+    const { condition } = this.state;
+    const md = '# This is a header\n\nAnd this is a paragraph';
+    return (
+      <div className="flip-card">
+        <div className="btn-group btn-group-lg" role="group" aria-label="...">
+          <button type="button" className="btn btn-outline-info">
+            Prev
+          </button>
+          <button type="button" className="btn btn-secondary">
+            Random
+          </button>
+          <button type="button" className="btn btn-outline-info">
+            Next
+          </button>
+        </div>
+        <div
+          className={condition ? 'flip-card-inner' : 'flip-card-inner flip'}
+          onClick={this.handleClick}
+        >
+          <div className="flip-card-front">
+            <img
+              src="https://mdbootstrap.com/img/Photos/Others/photo7.jpg"
+              alt="Avatar"
+              style={{ width: '800px', height: '400px' }}
+            />
           </div>
-          <div className="back">Bicycle</div>
+          <div className="flip-card-back">
+            <ReactMarkdown source={md} />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Flashcard;

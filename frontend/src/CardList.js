@@ -7,7 +7,7 @@ function CardList() {
       <div className="clearfix">
         <div className="form-inline pull-left">
           <button type="button" className="btn btn-success">
-            <span className="glyphicon glyphicon-plus"> </span>Add more user
+            <span className="glyphicon glyphicon-plus"> </span>Add
           </button>
         </div>
         <div className="form-inline pull-right">
@@ -24,20 +24,20 @@ function CardList() {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Country</th>
-            <th>Salary</th>
-            <th>Email</th>
+            <th>Id</th>
+            <th>Type</th>
+            <th>Front</th>
+            <th>Back</th>
             <th>x</th>
             <th>x</th>
           </tr>
         </thead>
         <tbody className="text-center">
           <tr>
-            <td>user.name</td>
-            <td>user.country</td>
-            <td>user.salary</td>
-            <td>user.email</td>
+            <td>id</td>
+            <td>type</td>
+            <td>front</td>
+            <td>back</td>
             <td>
               <button type="button" className="btn btn-primary">
                 Edit
@@ -53,17 +53,41 @@ function CardList() {
             <td colSpan="2">
               <b>Total </b>
             </td>
-            <td className="text-center">resultUser | totalSalary:salary</td>
-            <td colSpan="3">x</td>
+            <td className="text-center">100</td>
           </tr>
         </tbody>
       </table>
       <div className="crude-form__wrapper">
-        <h3>Edit user</h3>
-        <h3>Add user</h3>
+        <h3>Edit</h3>
+        <h3>Add</h3>
         <form name="userForm">
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios1"
+              value="option1"
+              checked
+            />
+            <label className="form-check-label" htmlFor="exampleRadios1">
+              Text
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="option2"
+            />
+            <label className="form-check-label" htmlFor="exampleRadios2">
+              Markdown
+            </label>
+          </div>
           <div className="form-group">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Front</label>
             <input
               className="form-control"
               id="editName"
@@ -72,12 +96,9 @@ function CardList() {
               placeholder="Edit name"
               required="required"
             />
-            <div className="form-alert alert alert-danger">
-              Please input name
-            </div>
           </div>
           <div className="form-group">
-            <label htmlFor="country">Country</label>
+            <label htmlFor="country">Back</label>
             <input
               className="form-control"
               id="editCounty"
@@ -86,45 +107,6 @@ function CardList() {
               placeholder="Edit country"
               required="required"
             />
-            <div className="form-alert alert alert-danger">
-              Please input user country
-            </div>
-          </div>
-          <div className="form-group">
-            <label htmlFor="salary">Salary</label>
-            <input
-              className="form-control"
-              id="editSalary"
-              type="number"
-              name="salary"
-              placeholder="Edit salary"
-              min="1"
-              required="required"
-            />
-            <div className="form-alert alert alert-danger">
-              <span>Please input valid number</span>
-              <span>Please input salary greater than 1</span>
-              <span>Please input salary</span>
-            </div>
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              className="form-control"
-              id="editEmail"
-              type="email"
-              name="email"
-              placeholder="Edit email"
-              required="required"
-              min="1"
-            />
-          </div>
-          <div className="form-alert alert alert-danger">
-            <span>Please input valid email</span>
-            <span>Please input email</span>
-          </div>
-          <div className="form-alert alert alert-danger">
-            This email has been registerd by other user
           </div>
           <button type="button" className="btn btn-primary">
             <i className="glyphicon glyphicon-pencil"> </i>Save change
