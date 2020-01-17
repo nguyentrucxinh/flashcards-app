@@ -1,3 +1,10 @@
+# Tech stack
+- React (react-router)
+- PropTypes
+- Redux (redux-thunk, redux-form)
+- Firestore (Firebase)
+- Markdown
+
 # Setup
 
 ```bash
