@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CardList from './CardList/CardList';
-import { getCards } from '../../actions';
+import { getCards, createCard } from '../../actions';
 
 const mapStateToProps = state => ({
   cards: state.cards
@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onGetCards: () => {
     dispatch(getCards());
-  }
+  },
+  onCreateCard: data => dispatch(createCard(data))
 });
 
 const CardListContainer = connect(

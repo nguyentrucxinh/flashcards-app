@@ -13,6 +13,15 @@ class CardList extends Component {
   createCard = values => {
     // eslint-disable-next-line no-console
     console.log('values form:', values);
+
+    const { onCreateCard } = this.props;
+    onCreateCard(values)
+      .then(() => {
+        // Reset form
+      })
+      .catch(error => {
+        throw new Error(error);
+      });
   };
 
   renderRow = card => {
@@ -91,6 +100,7 @@ class CardList extends Component {
 
 CardList.propTypes = {
   onGetCards: PropTypes.func.isRequired,
+  onCreateCard: PropTypes.func.isRequired,
   cards: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
