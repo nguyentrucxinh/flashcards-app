@@ -21,7 +21,7 @@ module.exports = merge(common, {
     // https://webpack.js.org/configuration/dev-server/#devservercontentbase
     contentBase: './public',
     // https://webpack.js.org/configuration/dev-server/#devserverport
-    port: 9000,
+    port: 8000,
     // https://webpack.js.org/configuration/dev-server/#devserverhost
     host: '0.0.0.0',
     // https://webpack.js.org/configuration/dev-server/#devserveropen
