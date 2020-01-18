@@ -34,18 +34,18 @@ const Form = props => {
         <label htmlFor="front">Front</label>
         <Field
           name="front"
-          component="input"
-          type="text"
+          component="textarea"
           className="form-control"
+          rows="5"
         />
       </div>
       <div className="form-group">
         <label htmlFor="back">Back</label>
         <Field
           name="back"
-          component="input"
-          type="text"
+          component="textarea"
           className="form-control"
+          rows="5"
         />
       </div>
       <button type="submit" className="btn btn-primary">
