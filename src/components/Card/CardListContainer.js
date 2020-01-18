@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import CardList from './CardList/CardList';
-import { getCards, createCard } from '../../actions';
+import CardList from './CardList';
+import { getCards, createCard } from '../../actions/card';
 
 const mapStateToProps = state => ({
   cards: state.cards

@@ -2,10 +2,10 @@ import React from 'react';
 import { hot } from 'react-hot-loader/root';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from '../../store';
 import './App.scss';
-import Flashcard from './Flashcard';
-import CardListContainer from './components/CardListContainer/CardListContainer';
+import Flashcard from '../../Flashcard';
+import CardListContainer from '../Card/CardListContainer';
 
 function App() {
   return (

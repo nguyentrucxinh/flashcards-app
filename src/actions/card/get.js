@@ -1,5 +1,5 @@
-import firebase from '../Firebase';
-import { FETCH_CARDS_TYPE } from '../constants';
+import firebase from '../../Firebase';
+import { FETCH_CARDS_TYPE } from '../../constants';
 
 const receiveCards = cards => ({
   type: FETCH_CARDS_TYPE,

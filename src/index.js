@@ -2,17 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.scss';
-import App from './App';
+import App from './components/App/App';
 // import * as serviceWorker from './serviceWorker';
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!'); // eslint-disable-line
 }
-
-// for public information
-console.log(process.env.HELLO); // eslint-disable-line
-// for sensitive information: API keys/secrets (credentials), ...
-console.log(process.env.WORLD); // eslint-disable-line
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

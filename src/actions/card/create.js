@@ -1,5 +1,5 @@
-import firebase from '../Firebase';
-import { CREATE_CARD_TYPE } from '../constants';
+import firebase from '../../Firebase';
+import { CREATE_CARD_TYPE } from '../../constants';
 
 const receiveCard = card => ({
   type: CREATE_CARD_TYPE,
