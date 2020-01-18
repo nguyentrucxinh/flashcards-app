@@ -3,6 +3,7 @@
 import React from 'react';
 import './Flashcard.scss';
 import ReactMarkdown from 'react-markdown';
+import CodeBlock from './CodeBlock';
 
 class Flashcard extends React.PureComponent {
   constructor(props) {
@@ -19,7 +20,7 @@ class Flashcard extends React.PureComponent {
 
   render() {
     const { condition } = this.state;
-    const md = '# This is a header\n\nAnd this is a paragraph';
+    const md = `# 08 - Scope & self\n\n## Question\n\n\`\`\`js\nvar myCar = {\n    color: "Blue",\n    logColor: function() {\n        var self = this;\n        console.log("In logColor - this.color: " + this.color);\n        console.log("In logColor - self.color: " + self.color);\n        (function() {\n            console.log("In IIFE - this.color: " + this.color);\n            console.log("In IIFE - self.color: " + self.color);\n        })();\n    }\n};\n\nmyCar.logColor();\n\`\`\``;
     return (
       <div className="flip-card">
         <div className="btn-group btn-group-lg" role="group" aria-label="...">
@@ -45,7 +46,7 @@ class Flashcard extends React.PureComponent {
             />
           </div>
           <div className="flip-card-back">
-            <ReactMarkdown source={md} />
+            <ReactMarkdown source={md} renderers={{ code: CodeBlock }} />
           </div>
         </div>
       </div>
