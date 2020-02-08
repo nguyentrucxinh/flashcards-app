@@ -41,7 +41,7 @@ module.exports = merge(common, {
       // Allows to overwrite the parameters used in the template
       templateParameters: {
         PUBLIC_URL: '',
-        title: 'React Webpack App'
+        title: 'Flashcard App'
       }
     })
   ],

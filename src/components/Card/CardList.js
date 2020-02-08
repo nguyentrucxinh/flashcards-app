@@ -24,6 +24,20 @@ class CardList extends Component {
       });
   };
 
+  deleteCard = id => {
+    // eslint-disable-next-line no-console
+    console.log('id:', id);
+
+    const { onDeleteCard } = this.props;
+    onDeleteCard(id)
+      .then(() => {
+        // Reset form
+      })
+      .catch(error => {
+        throw new Error(error);
+      });
+  };
+
   renderRow = card => {
     return (
       <tr key={card.id}>
@@ -37,7 +51,11 @@ class CardList extends Component {
           </button>
         </td>
         <td>
-          <button type="button" className="btn btn-danger">
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={() => this.deleteCard(card.id)}
+          >
             Delete
           </button>
         </td>
@@ -101,6 +119,7 @@ class CardList extends Component {
 CardList.propTypes = {
   onGetCards: PropTypes.func.isRequired,
   onCreateCard: PropTypes.func.isRequired,
+  onDeleteCard: PropTypes.func.isRequired,
   cards: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

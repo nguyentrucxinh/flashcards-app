@@ -30,7 +30,7 @@ module.exports = merge(common, {
       },
       templateParameters: {
         PUBLIC_URL: '',
-        title: 'React Webpack App'
+        title: 'Flashcard App'
       }
     }),
     new MiniCssExtractPlugin({
