@@ -22,3 +22,12 @@ npx serve -s build/
 ```
 
 http://localhost:9000
+
+# Todo
+
+- [x] CRUD: Delete
+- Memorize: Button Random, Next, Prev
+- CRUD: Pagination
+- CRUD: Search
+- CRUD: Edit
+- Deploy to Heroku
