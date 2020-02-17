@@ -17,7 +17,7 @@ npm i -D @babel/core @babel/preset-env @babel/preset-react @babel/plugin-proposa
 
 ```
 # Run
-npm start
+npm run dev
 
 # Build
 npm run build
@@ -26,13 +26,34 @@ npx serve -s build/
 
 http://localhost:8000
 
+# Deploy
+
+- `webpack.DefinePlugin` will override .env file
+
+```ps
+$env:FIREBASE_API_KEY=""
+$env:FIREBASE_AUTH_DOMAIN=""
+$env:FIREBASE_DATABASE_URL=""
+$env:FIREBASE_PROJECT_ID=""
+$env:FIREBASE_STORAGE_BUCKET=""
+
+Get-ChildItem Env:
+
+# Development
+npm run dev
+
+# Production
+npm run build
+npm start
+```
+
 # Todo
 
 - [x] CRUD: Read list
 - [x] CRUD: Create
 - [x] CRUD: Delete
 - [x] Memorize: Button Random, Next, Prev
+- [x] Deploy to Heroku
 - [ ] CRUD: Pagination
 - [ ] CRUD: Search
 - [ ] CRUD: Update
-- [ ] Deploy to Heroku

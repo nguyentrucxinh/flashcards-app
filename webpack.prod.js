@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const merge = require('webpack-merge');
+const { DefinePlugin } = require('webpack');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -16,6 +17,19 @@ module.exports = merge(common, {
     filename: 'static/js/[name].[contenthash].js'
   },
   plugins: [
+    new DefinePlugin({
+      'process.env': {
+        FIREBASE_API_KEY: JSON.stringify(process.env.FIREBASE_API_KEY),
+        FIREBASE_AUTH_DOMAIN: JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
+        FIREBASE_DATABASE_URL: JSON.stringify(
+          process.env.FIREBASE_DATABASE_URL
+        ),
+        FIREBASE_PROJECT_ID: JSON.stringify(process.env.FIREBASE_PROJECT_ID),
+        FIREBASE_STORAGE_BUCKET: JSON.stringify(
+          process.env.FIREBASE_STORAGE_BUCKET
+        )
+      }
+    }),
     new Dotenv({
       path: './.env.production'
     }),
