@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "start": "node server.js",
+    "heroku-postbuild": "webpack --config webpack.prod.js",
+    "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
@@ -15,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
     "firebase": "^7.6.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
