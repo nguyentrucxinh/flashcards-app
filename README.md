@@ -16,18 +16,23 @@ npm i -D @babel/core @babel/preset-env @babel/preset-react @babel/plugin-proposa
 # How to run
 
 ```
+# Run
 npm start
+
+# Build
 npm run build
 npx serve -s build/
 ```
 
-http://localhost:9000
+http://localhost:8000
 
 # Todo
 
+- [x] CRUD: Read list
+- [x] CRUD: Create
 - [x] CRUD: Delete
-- Memorize: Button Random, Next, Prev
-- CRUD: Pagination
-- CRUD: Search
-- CRUD: Edit
-- Deploy to Heroku
+- [x] Memorize: Button Random, Next, Prev
+- [ ] CRUD: Pagination
+- [ ] CRUD: Search
+- [ ] CRUD: Update
+- [ ] Deploy to Heroku

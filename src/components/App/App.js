@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../../store';
 import './App.scss';
-import Flashcard from '../Flashcard/Flashcard';
 import CardListContainer from '../Card/CardListContainer';
+import FlashcardContainer from '../Flashcard/FlashcardContainer';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
               <CardListContainer />
             </Route>
             <Route path="/">
-              <Flashcard />
+              <FlashcardContainer />
             </Route>
           </Switch>
         </div>
